@@ -1,0 +1,17 @@
+<div class="login">
+
+  <mat-card class="login-card">
+    <mat-progress-bar *ngIf="spinner$ | async" class="progress-bar" mode="indeterminate"></mat-progress-bar>
+
+    <h2 mat-subheader>Encoder</h2>
+
+    <div class="login-info">
+      Please provide access credentials to continue.
+    </div>
+
+    <mat-card-content>
+      <app-login-form (submitLogin)="login($event);"></app-login-form>
+    </mat-card-content>
+
+  </mat-card>
+</div>

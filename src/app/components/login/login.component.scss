@@ -1,0 +1,30 @@
+.login {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+
+  &-card {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+
+    @media screen and (min-width: 576px) {
+      width: 350px;
+      border: 1px solid rgba(0, 0, 0, .12);
+    }
+  }
+
+  &-info {
+    color: rgba(0, 0, 0, 0.57);
+    margin-bottom: 10px;
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,28 @@
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLogin.emit(loginForm.getRawValue());">
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" name="email" type="email" />
+
+    <mat-error *ngIf="formFields.email.hasError('required')">Email is required to continue</mat-error>
+    <mat-error *ngIf="formFields.email.hasError('email')">Invalid email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" name="password" [type]="showPassword ? 'text' : 'password'" />
+
+    <button type="button" mat-icon-button matSuffix (click)="showPassword = !showPassword">
+      <mat-icon color="primary">{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+
+    <mat-error *ngIf="formFields.password.hasError('required')">Password is required</mat-error>
+    <mat-error *ngIf="formFields.password.hasError('minlength')">Password must contain at least 6 characters</mat-error>
+    <mat-error *ngIf="formFields.password.hasError('pattern')">
+      Password must contain at least one numeric character
+    </mat-error>
+  </mat-form-field>
+
+  <button type="submit" class="submit-button" [disabled]="!loginForm.valid" mat-flat-button color="primary">Log In</button>
+
+</form>

@@ -1,0 +1,12 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.submit-button {
+  float: right;
+  margin-top: 15px;
+}
+
+mat-form-field {
+  margin: 10px 0;
+}
