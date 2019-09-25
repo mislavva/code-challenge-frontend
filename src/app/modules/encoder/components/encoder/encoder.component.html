@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbar-row">
+    <span>Encoder</span>
+
+    <button mat-icon-button (click)="onLogout();">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="encoder">
+  <div class="encoder-card">
+    <mat-form-field>
+      <mat-label>Insert text for encoding here</mat-label>
+
+      <input matInput #inputRef="matInput" [formControl]="text" type="text" />
+
+      <mat-error *ngIf="text.hasError('required')">Text for encoding is required</mat-error>
+      <mat-error *ngIf="text.hasError('pattern')">Text can contain only alphabetic characters</mat-error>
+    </mat-form-field>
+
+    <div class="encoder-button" *ngIf="encoding$ | async; else b">
+      <mat-spinner diameter="30"></mat-spinner>
+    </div>
+
+    <ng-template #b>
+      <button [disabled]="!text.valid" mat-flat-button (click)="encodeText(text.value);" class="encoder-button"
+        color="primary">Encode</button>
+    </ng-template>
+
+  </div>
+
+  <div class="encoder-result" *ngIf="encodedText$ | async as t">
+      <h1 class="mat-display-3">{{ t }}</h1>
+  </div>
+</div>

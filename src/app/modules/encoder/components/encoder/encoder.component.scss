@@ -1,0 +1,38 @@
+mat-form-field {
+  width: 100%;
+}
+
+.toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.encoder {
+  width: 100vw;
+  height: 100%;
+  margin-top: 30px;
+
+  &-card,
+  &-result {
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (min-width: 576px) {
+      width: 450px;
+    }
+  }
+  &-card {
+    display: flex;
+  }
+
+  &-result {
+    margin-top: 15px;
+  }
+
+  &-button {
+    width: 100px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+  }
+}

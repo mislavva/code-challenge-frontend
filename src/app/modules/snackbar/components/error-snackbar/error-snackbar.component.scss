@@ -1,0 +1,15 @@
+.snackbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 10px;
+  }
+}
